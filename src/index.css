@@ -1,18 +1,37 @@
 :root {
-  --color-bg: #050816;
-  --color-bg-alt: #0b1020;
-  --color-primary: #ff7a1a;
-  --color-primary-soft: rgba(255, 122, 26, 0.15);
-  --color-accent: #3fa8ff;
-  --color-text: #f7fafc;
-  --color-text-soft: #a0aec0;
+  /* Brand colors (GIRPRINT) */
+  --brand-orange: #e75d12;
+  --brand-blue: #1f90cc;
+  --brand-beige: #fee6ca;
+
+  /* Surfaces */
+  --color-bg: var(--brand-beige);
+  --color-bg-soft: #fff3e3;     /* beige más claro para secciones */
+  --color-surface: #ffffff;     /* cards */
+  --color-surface-soft: #fff8ee;/* cards menos blancas */
+  --color-border: rgba(0, 0, 0, 0.08);
+
+  /* Text */
+  --color-text: #141414;
+  --color-text-soft: #4b4b4b;
+  --color-muted: #6b6b6b;
+
+  /* Actions */
+  --color-primary: var(--brand-orange);
+  --color-primary-hover: #cf5210;
+  --color-secondary: var(--brand-blue);
+  --color-secondary-hover: #167bb0;
+
+  /* Radius + shadow (mantiene tu “feel” anterior) */
   --radius-lg: 16px;
   --radius-xl: 22px;
-  --shadow-soft: 0 18px 35px rgba(0, 0, 0, 0.45);
+  --shadow-soft: 0 18px 35px rgba(0, 0, 0, 0.14);
+  --shadow-hover: 0 24px 55px rgba(0, 0, 0, 0.18);
+
   --max-width: 1100px;
   --transition-fast: 0.18s ease-out;
-  --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+
+  --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 *,
@@ -24,7 +43,7 @@
 body {
   margin: 0;
   font-family: var(--font-body);
-  background: radial-gradient(circle at top left, #18263d 0, #050816 45%, #020307 100%);
+  background: radial-gradient(circle at top left, #fff2df 0%, var(--color-bg) 55%, #ffe9cf 100%);
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
 }
@@ -41,7 +60,6 @@ a {
 }
 
 /* Layout helpers */
-
 .container {
   width: 100%;
   max-width: var(--max-width);
@@ -54,16 +72,16 @@ a {
 }
 
 .section--alt {
-  background: linear-gradient(
-    135deg,
-    rgba(15, 23, 42, 0.95),
-    rgba(15, 23, 42, 0.6)
-  );
+  /* Antes era oscuro: ahora lo hacemos editorial claro */
+  background: linear-gradient(180deg, var(--color-bg-soft), var(--color-bg));
 }
 
 .section--cta {
+  /* CTA debe contrastar fuerte y verse premium */
   padding: 3.5rem 0;
-  background: radial-gradient(circle at top right, #1e293b, #020617);
+  background: radial-gradient(circle at top right, rgba(31, 144, 204, 0.22), rgba(231, 93, 18, 0.10)),
+              linear-gradient(135deg, #0f2a3a, #0b1e2b);
+  color: #ffffff;
 }
 
 .section__header {
@@ -84,19 +102,13 @@ a {
 }
 
 /* Header */
-
 .header {
   position: sticky;
   top: 0;
   z-index: 20;
-  backdrop-filter: blur(12px);
-  background: linear-gradient(
-      to bottom,
-      rgba(15, 23, 42, 0.9),
-      rgba(15, 23, 42, 0.6),
-      transparent
-    );
-  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  backdrop-filter: blur(10px);
+  background: rgba(254, 230, 202, 0.92);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .header__content {
@@ -119,16 +131,12 @@ a {
   width: 38px;
   height: 38px;
   border-radius: 10px;
-  background: conic-gradient(
-    from 180deg,
-    #ff7a1a,
-    #ffd166,
-    #3fa8ff,
-    #ff7a1a
-  );
-  font-weight: 700;
+  background: linear-gradient(135deg, var(--brand-orange), var(--brand-blue));
+  color: #ffffff;
+  font-weight: 800;
   font-size: 0.9rem;
   letter-spacing: 0.04em;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
 }
 
 .header__logo-text {
@@ -137,14 +145,14 @@ a {
 }
 
 .header__logo-title {
-  font-weight: 700;
-  letter-spacing: 0.18em;
+  font-weight: 800;
+  letter-spacing: 0.14em;
   font-size: 0.8rem;
 }
 
 .header__logo-subtitle {
   font-size: 0.75rem;
-  color: var(--color-text-soft);
+  color: var(--color-muted);
 }
 
 .header__nav {
@@ -156,19 +164,17 @@ a {
 .header__nav a {
   padding: 0.35rem 0.6rem;
   border-radius: 999px;
-  color: var(--color-text-soft);
-  transition: background-color var(--transition-fast), color var(--transition-fast),
-    transform var(--transition-fast);
+  color: var(--color-muted);
+  transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
 }
 
 .header__nav a:hover {
-  background: rgba(15, 23, 42, 0.9);
+  background: rgba(255, 255, 255, 0.65);
   color: var(--color-text);
   transform: translateY(-1px);
 }
 
 /* Hero */
-
 .hero {
   padding: 3.5rem 0 3rem;
 }
@@ -200,7 +206,6 @@ a {
 }
 
 /* Buttons */
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -208,53 +213,53 @@ a {
   padding: 0.6rem 1.4rem;
   border-radius: 999px;
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 600;
   border: 1px solid transparent;
   cursor: pointer;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast),
-    background-color var(--transition-fast), color var(--transition-fast),
-    border-color var(--transition-fast);
+    background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
 }
 
 .btn--primary {
-  background: linear-gradient(135deg, var(--color-primary), #ffd166);
-  color: #111827;
+  background: linear-gradient(135deg, var(--color-primary), #ff8a3b);
+  color: #ffffff;
   box-shadow: var(--shadow-soft);
 }
 
 .btn--primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.6);
+  background: linear-gradient(135deg, var(--color-primary-hover), #ff7a1a);
+  box-shadow: var(--shadow-hover);
 }
 
 .btn--ghost {
-  background: transparent;
-  border-color: rgba(148, 163, 184, 0.4);
+  background: rgba(255, 255, 255, 0.35);
+  border-color: rgba(0, 0, 0, 0.12);
   color: var(--color-text);
 }
 
 .btn--ghost:hover {
-  background: rgba(15, 23, 42, 0.85);
-  border-color: rgba(148, 163, 184, 0.8);
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(0, 0, 0, 0.18);
 }
 
 .btn--light {
-  background: #e5e7eb;
-  color: #111827;
-  box-shadow: var(--shadow-soft);
+  background: #ffffff;
+  color: #0b1e2b;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
 }
 
 .btn--light:hover {
+  transform: translateY(-1px);
   background: #f9fafb;
 }
 
 /* Hero highlight */
-
 .hero__highlight {
   border-radius: var(--radius-xl);
   padding: 1.6rem 1.5rem;
-  background: radial-gradient(circle at top left, #1e293b, #020617);
-  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: linear-gradient(180deg, var(--color-surface-soft), var(--color-surface));
+  border: 1px solid var(--color-border);
   box-shadow: var(--shadow-soft);
 }
 
@@ -265,8 +270,9 @@ a {
   padding: 0.25rem 0.75rem;
   border-radius: 999px;
   font-size: 0.75rem;
-  background: rgba(15, 23, 42, 0.95);
-  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: rgba(31, 144, 204, 0.12);
+  border: 1px solid rgba(31, 144, 204, 0.22);
+  color: #0b1e2b;
   margin-bottom: 1.1rem;
 }
 
@@ -276,7 +282,8 @@ a {
   margin: 0;
   display: grid;
   gap: 0.6rem;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
+  color: var(--color-text);
 }
 
 .hero__list li::before {
@@ -286,7 +293,6 @@ a {
 }
 
 /* Grid / cards */
-
 .grid {
   display: grid;
   gap: 1.5rem;
@@ -294,23 +300,21 @@ a {
 }
 
 .card {
-  background: radial-gradient(circle at top left, #0f172a, #020617);
+  background: linear-gradient(180deg, var(--color-surface-soft), var(--color-surface));
   border-radius: var(--radius-lg);
   padding: 1.4rem 1.4rem 1.6rem;
-  border: 1px solid rgba(148, 163, 184, 0.25);
+  border: 1px solid var(--color-border);
   box-shadow: var(--shadow-soft);
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast),
-    border-color var(--transition-fast), background-color var(--transition-fast);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
 }
 
 .card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.7);
-  border-color: rgba(250, 204, 21, 0.6);
-  background: radial-gradient(circle at top left, #111827, #020617);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(231, 93, 18, 0.25);
 }
 
 .card h3 {
@@ -321,19 +325,19 @@ a {
 .card__description {
   margin: 0;
   color: var(--color-text-soft);
-  font-size: 0.9rem;
+  font-size: 0.92rem;
 }
 
 .card__list {
   margin: 0.6rem 0 0;
   padding-left: 1.1rem;
   display: grid;
-  gap: 0.15rem;
-  font-size: 0.88rem;
+  gap: 0.18rem;
+  font-size: 0.9rem;
+  color: var(--color-text);
 }
 
 /* CTA section */
-
 .section__cta-content {
   display: flex;
   align-items: center;
@@ -347,11 +351,11 @@ a {
 
 .section__cta-content p {
   margin: 0;
-  color: var(--color-text-soft);
+  color: rgba(255, 255, 255, 0.86);
+  max-width: 700px;
 }
 
 /* Contact */
-
 .contact {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
@@ -359,10 +363,11 @@ a {
 }
 
 .contact__item {
-  background: rgba(15, 23, 42, 0.85);
+  background: linear-gradient(180deg, var(--color-surface-soft), var(--color-surface));
   border-radius: var(--radius-lg);
   padding: 1.2rem 1.3rem;
-  border: 1px solid rgba(148, 163, 184, 0.25);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-soft);
 }
 
 .contact__item h3 {
@@ -373,35 +378,39 @@ a {
 .contact__item p,
 .contact__item a {
   margin: 0.1rem 0;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   color: var(--color-text-soft);
 }
 
+.contact__item a {
+  font-weight: 600;
+}
+
 .contact__item a:hover {
-  color: var(--color-accent);
+  color: var(--color-secondary);
 }
 
 /* Footer */
-
 .footer {
   margin-top: auto;
   padding: 1.5rem 0 1.8rem;
-  border-top: 1px solid rgba(148, 163, 184, 0.3);
-  background: rgba(2, 6, 23, 0.95);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  background: linear-gradient(135deg, var(--brand-blue), #126a98);
+  color: #ffffff;
 }
 
 .footer__content {
   text-align: center;
-  font-size: 0.8rem;
-  color: var(--color-text-soft);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .footer__secondary {
   margin-top: 0.3rem;
+  color: rgba(255, 255, 255, 0.82);
 }
 
 /* Responsive tweaks */
-
 @media (max-width: 768px) {
   .header__content {
     flex-direction: column;

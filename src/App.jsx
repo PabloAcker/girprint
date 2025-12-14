@@ -72,19 +72,6 @@ const serviceSections = [
       "Rompecabezas",
       "Bolsas ecológicas impresas"
     ]
-  },
-  {
-    id: "senaletica",
-    title: "Señalética",
-    description:
-      "Soluciones integrales en señalización, seguridad e información.",
-    items: [
-      "Señalización vial",
-      "Señalización fotoluminiscente",
-      "Señalización de seguridad e información",
-      "Letreros en acrílico, panaflex, PVC, bronce, trupan, celtex, alucobond, acero inoxidable",
-      "Letreros con iluminación LED"
-    ]
   }
 ];
 
@@ -103,15 +90,6 @@ function App() {
               </span>
             </div>
           </div>
-
-          <nav className="header__nav">
-            <a href="#impresiones">Impresiones</a>
-            <a href="#promocional">Promocional</a>
-            <a href="#confeccion">Confección</a>
-            <a href="#exhibicion">Exhibición</a>
-            <a href="#senaletica">Señalética</a>
-            <a href="#contacto">Contacto</a>
-          </nav>
         </div>
       </header>
 
@@ -127,7 +105,7 @@ function App() {
               </h1>
               <p>
                 GIRPRINT ofrece soluciones completas en confección, impresión,
-                material promocional, señalética y material de exhibición
+                material promocional y material de exhibición
                 para empresas, instituciones y eventos en Bolivia.
               </p>
               <div className="hero__actions">
@@ -135,7 +113,7 @@ function App() {
                   Ver servicios
                 </a>
                 <a href="#contacto" className="btn btn--ghost">
-                  Solicitar información
+                  Solicitar más información
                 </a>
               </div>
             </div>
@@ -146,7 +124,6 @@ function App() {
                 <li>Impresión UV DTF y textil</li>
                 <li>Material promocional a medida</li>
                 <li>Confección textil corporativa</li>
-                <li>Señalética con iluminación LED</li>
               </ul>
             </div>
           </div>
@@ -187,15 +164,15 @@ function App() {
         <section className="section section--cta">
           <div className="container section__cta-content">
             <div>
-              <h2>¿Tienes un proyecto en mente?</h2>
+              <h2>¿Tienes un producto en mente?</h2>
               <p>
-                Podemos ayudarte a elegir los materiales y formatos adecuados
+                Contáctanos y lo hacemos realidad. Podemos ayudarte a elegir los materiales y formatos adecuados
                 para que tu marca destaque en cada punto de contacto con tus
                 clientes.
               </p>
             </div>
             <a href="#contacto" className="btn btn--light">
-              Hablar con GIRPRINT
+              ¡Comunícate con nosotros!
             </a>
           </div>
         </section>
