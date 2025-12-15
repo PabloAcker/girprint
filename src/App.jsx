@@ -1,4 +1,6 @@
 import React from "react";
+import ImageCarousel from "./components/ImageCarousel/ImageCarousel";
+
 
 const serviceSections = [
   {
@@ -157,6 +159,13 @@ function App() {
                 </article>
               ))}
             </div>
+            {/* ✅ Carrusel debajo de servicios */}
+            <ImageCarousel
+              title="Galería de servicios"
+              subtitle="Ejemplos visuales de lo que realizamos: confección, serigrafía, impresiones y más."
+              autoPlay={true}
+              interval={3200}
+            />
           </div>
         </section>
 
@@ -190,9 +199,9 @@ function App() {
 
             <div className="contact">
               <div className="contact__item">
-                <h3>Correo electrónico</h3>
+                <h3>Redes sociales</h3>
                 <a href="mailto:gircandebol.srl@gmail.com">
-                  gircandebol.srl@gmail.com
+                  wa.me/63969724
                 </a>
               </div>
 
