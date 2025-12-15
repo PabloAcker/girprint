@@ -21,28 +21,28 @@ export default function ImageCarousel({
         ? items
         : [
             {
-              title: "Poleras personalizadas",
+              title: "Poleras personalizadas / serigrafía",
               image:
                 "https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=1400&q=80",
-              tag: "Confección"
-            },
-            {
-              title: "Serigrafía / impresión",
-              image:
-                "https://images.unsplash.com/photo-1580915411954-282cb1b0d780?auto=format&fit=crop&w=1400&q=80",
               tag: "Impresiones"
             },
             {
-              title: "Gorras corporativas",
+              title: "Chanchitos alcancias",
               image:
-                "https://images.unsplash.com/photo-1520975693411-4352d1d1d9b1?auto=format&fit=crop&w=1400&q=80",
-              tag: "Merchandising"
+                "https://images.unsplash.com/photo-1580915411954-282cb1b0d780?auto=format&fit=crop&w=1400&q=80",
+              tag: "Material promocional"
             },
             {
-              title: "Material promocional",
+              title: "Poleras / gorras",
+              image:
+                "https://images.unsplash.com/photo-1520975693411-4352d1d1d9b1?auto=format&fit=crop&w=1400&q=80",
+              tag: "Confección"
+            },
+            {
+              title: "Backboard publicitario",
               image:
                 "https://images.unsplash.com/photo-1555529669-2269763671c0?auto=format&fit=crop&w=1400&q=80",
-              tag: "Promocional"
+              tag: "Material de exhibición"
             }
           ],
     [items]

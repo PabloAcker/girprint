@@ -1,6 +1,6 @@
 import React from "react";
 import ImageCarousel from "./components/ImageCarousel/ImageCarousel";
-
+import { Phone, MessageCircle, MapPin, Instagram } from "lucide-react";
 
 const serviceSections = [
   {
@@ -15,8 +15,11 @@ const serviceSections = [
       "Serigrafía",
       "Tampografía",
       "Sublimación",
-      "Efectos metalizados y holográficos",
-      "Gigantografías"
+      "Gigantografías",
+      "Armables",
+      "Juegos didácticos",
+      "Rompecabezas",
+      "Bolsas ecológicas"
     ]
   },
   {
@@ -39,7 +42,8 @@ const serviceSections = [
       "Lanyards",
       "Abanicos",
       "Alcancías promocionales",
-      "Lápices de color"
+      "Lápices de color",
+      "Herramientas 5 en 1"
     ]
   },
   {
@@ -69,10 +73,6 @@ const serviceSections = [
       "Banderolas",
       "Inflables publicitarios",
       "Backboard publicitario",
-      "Stands y módulos para exhibición",
-      "Armables y juegos didácticos",
-      "Rompecabezas",
-      "Bolsas ecológicas impresas"
     ]
   }
 ];
@@ -107,8 +107,8 @@ function App() {
               </h1>
               <p>
                 GIRPRINT ofrece soluciones completas en confección, impresión,
-                material promocional y material de exhibición
-                para empresas, instituciones y eventos en Bolivia.
+                material promocional y material de exhibición en Bolivia.
+                No tercializamos ninguno de nuestros procesos.
               </p>
               <div className="hero__actions">
                 <a href="#servicios" className="btn btn--primary">
@@ -123,9 +123,11 @@ function App() {
             <div className="hero__highlight">
               <p className="hero__tag">La Paz · Bolivia</p>
               <ul className="hero__list">
-                <li>Impresión UV DTF y textil</li>
-                <li>Material promocional a medida</li>
-                <li>Confección textil corporativa</li>
+                <li>Impresión DTF UV y serigrafía</li>
+                <li>Personalización de poleras, canguros y más</li>
+                <li>Material promocional y de exhibición a medida</li>
+                <li>Confección textil</li>
+                <li>Impresiones troqueladas</li>
               </ul>
             </div>
           </div>
@@ -193,27 +195,54 @@ function App() {
               <h2>Contacto</h2>
               <p>
                 Escríbenos o llámanos para cotizaciones, pedidos especiales o
-                consultas sobre nuestros servicios.
+                consultas sobre nuestros servicios y catálogo.
               </p>
             </header>
 
             <div className="contact">
               <div className="contact__item">
                 <h3>Redes sociales</h3>
-                <a href="mailto:gircandebol.srl@gmail.com">
-                  wa.me/63969724
-                </a>
+
+                <p className="contact__line">
+                  <Instagram size={18} />
+                  <a
+                    href="https://www.instagram.com/girprint_bo/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    @girprint_bo
+                  </a>
+                </p>
               </div>
 
               <div className="contact__item">
                 <h3>Teléfonos</h3>
-                <p>+591 63969724</p>
-                <p>+591 2 2486253</p>
+
+                <p className="contact__line">
+                  <MessageCircle size={18} />
+                  <a
+                    href="https://wa.me/59163969724"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    +591 63969724
+                  </a>
+                </p>
+
+                <p className="contact__line">
+                  <Phone size={18} />
+                  <a href="tel:+59122486253">
+                    +591 2 2486253
+                  </a>
+                </p>
               </div>
 
               <div className="contact__item">
                 <h3>Dirección</h3>
-                <p>C. Nicolás Acosta 260, zona San Pedro</p>
+                <p className="contact__line">
+                  <MapPin size={18} />
+                  <a>C. Nicolás Acosta 260, zona San Pedro</a>
+                </p>
                 <p>La Paz - Bolivia</p>
               </div>
             </div>

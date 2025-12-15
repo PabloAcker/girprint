@@ -433,3 +433,23 @@ a {
     align-items: flex-start;
   }
 }
+
+.contact__line {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.contact__line svg {
+  color: var(--brand-orange);
+  flex-shrink: 0;
+}
+
+.contact__line a {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.contact__line a:hover {
+  color: var(--color-secondary);
+}
